@@ -35,6 +35,7 @@ type Props = {
     onClassificationClick?: Function,
     onVersionHistoryClick?: Function,
     descriptionTextareaProps: Object,
+    activityFeedState?: Array<any>,
     onCommentCreate?: Function,
     onCommentDelete?: Function,
     onTaskCreate?: Function,
@@ -46,7 +47,7 @@ type Props = {
     versions?: FileVersions,
     accessStats?: AccessStats,
     fileError?: Errors,
-    versionError?: Errors,
+    versionError?: Errors
 };
 
 const currentUser = { name: 'Blue Ivy Carter', id: '2' };
@@ -108,6 +109,7 @@ const Sidebar = ({
     onInteraction,
     onDescriptionChange,
     intl,
+    activityFeedState,
     onClassificationClick,
     onVersionHistoryClick,
     onCommentCreate,
@@ -185,17 +187,13 @@ const Sidebar = ({
     };
 
     const ActivityFeedSidebar = (
-        <ActivityFeed
-            feedState={feedState}
-            inputState={inputState}
-            handlers={handlers}
-        />
+        <ActivityFeed feedState={activityFeedState} inputState={inputState} handlers={handlers} />
     );
 
     return (
         <TabView defaultSelectedIndex={shouldShowSkills ? 0 : 1}>
             <Tab title={intl.formatMessage(messages.sidebarDetailsTitle)}>{Details}</Tab>
-            <Tab title='Activity'>{ActivityFeedSidebar}</Tab>
+            <Tab title={intl.formatMessage(messages.activityFeedTitle)}>{ActivityFeedSidebar}</Tab>
         </TabView>
     );
 };
