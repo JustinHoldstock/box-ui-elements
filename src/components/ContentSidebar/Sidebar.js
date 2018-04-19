@@ -49,249 +49,42 @@ type Props = {
     versionError?: Errors,
 };
 
-const currentUser = { name: 'Aubrey Graham', id: '7' };
-
-const msOneDayAgo = 86400 * 1000;
-const TIME_STRING_SEPT_27_2017 = '2017-08-27T10:40:41-07:00';
-
+const currentUser = { name: 'Blue Ivy Carter', id: '2' };
 const feedState = [
     {
-        createdAt: new Date().toISOString(),
-        id: 'bb6d6c62-f411-43e8-840f-e17bb3611d34',
-        action: 'applied',
-        type: 'keywords',
-        words: 'cartoon font logo brand clip art illustration line artwork'
-    },
-    {
-        createdAt: new Date(Date.now() - 5 * msOneDayAgo).toISOString(),
-        id: '123122432',
-        taggedMessage: '私は、これは言うことを知りません ＠[2031225629:リュ]',
-        createdBy: {
-            name: 'The man formerly known as Prince',
-            id: 1
-        },
-        type: 'comment'
-    },
-    {
-        createdAt: Date.now() - 1 * msOneDayAgo,
-        id: '1231231234',
-        taggedMessage: 'An error comment',
-        isPending: true,
-        error: {
-            title: 'An error occured',
-            message:
-                'Stuff got fudged up, who knows what happened. Probably your fault tho...',
-            action: {
-                text: 'Fix it',
-                onAction: () => console.log('confirm')
-            },
-        },
-        createdBy: { name: 'Kanye West', id: 10 },
-        type: 'comment'
-    },
-    {
         createdAt: Date.now(),
-        id: '148953',
-        versionNumber: 1,
-        createdBy: { name: 'Kanye West', id: 10 },
-        action: 'upload',
-        type: 'file_version'
-    },
-    {
-        createdAt: Date.now(),
-        id: '1489531',
+        id: '1838475',
         versionNumber: 2,
-        createdBy: { name: 'Kanye West', id: 10 },
+        createdBy: { name: 'Beyonce', id: 4 },
         action: 'upload',
         type: 'file_version'
-    },
-    {
-        createdAt: Date.now(),
-        id: '1489532',
-        versionNumber: 3,
-        createdBy: { name: 'Abel Tesfaye', id: 13 },
-        action: 'upload',
-        type: 'file_version'
-    },
-    {
-        createdAt: Date.now(),
-        id: '1489533',
-        versionNumber: 4,
-        createdBy: { name: 'Abel Tesfaye', id: 13 },
-        action: 'upload',
-        type: 'file_version'
-    },
-    {
-        createdAt: new Date(Date.now() - 1500 * 1000).toISOString(),
-        dueDate: Date.now(),
-        id: '123125312',
-        taggedMessage:
-            'Do it! Do it! Do it! Do it! Do it! Do it! Do it! Do it! .',
-        createdBy: { name: 'Aubrey Graham', id: 8 },
-        isPending: true,
-        error: {
-            title: 'An error occured',
-            message:
-                'Stuff got fudged up, who knows what happened. Probably your fault tho...',
-            action: {
-                text: 'Fix it',
-                onAction: () => console.log('confirm')
-            },
-        },
-        assignees: [
-            {
-                id: 0,
-                user: { name: 'Kanye West', id: 10 },
-                status: 'incomplete'
-            },
-            {
-                id: 1,
-                user: { name: 'The man formerly known as Prince', id: 3 },
-                status: 'incomplete'
-            },
-            {
-                id: 2,
-                user: { name: 'Shawn Carter', id: 2 },
-                status: 'completed'
-            },
-            {
-                id: 3,
-                user: { name: 'Beyonce', id: 4 },
-                status: 'rejected'
-            },
-        ],
-        type: 'task'
-    },
-    {
-        createdAt: Date.now(),
-        dueDate: null,
-        id: '123125',
-        taggedMessage:
-            'Click this link http://www.google.com Also, <b>This text should not show up bold</b>',
-        createdBy: { name: 'Aubrey Graham', id: 1 },
-        assignees: [
-            {
-                id: 0,
-                user: { name: 'Kanye West', id: 10 },
-                status: 'incomplete'
-            },
-            {
-                id: 1,
-                user: { name: 'The man formerly known as Prince', id: 3 },
-                status: 'incomplete'
-            },
-            {
-                id: 2,
-                user: { name: 'Shawn Carter', id: 2 },
-                status: 'completed'
-            },
-            {
-                id: 3,
-                user: { name: 'Beyonce', id: 4 },
-                status: 'rejected'
-            },
-        ],
-        type: 'task'
     },
     {
         createdAt: Date.now(),
         id: '123123',
-        taggedMessage:
-            'Hey bru, how u doing @[2030326577:Young Jeezy]? @[123:Kanye] is dope! <a href="http://www.box.com">This should not show up as a link</a>',
+        taggedMessage: 'I got 99 problems but @[123:Shawn Carter] ain\'t one!',
         createdBy: { name: 'Kanye West', id: 2 },
         type: 'comment'
     },
     {
         createdAt: Date.now(),
-        id: '123123123',
-        taggedMessage: 'A pending comment',
-        isPending: true,
-        createdBy: { name: 'Kanye West', id: 2 },
-        type: 'comment'
-    },
-    {
-        createdAt: TIME_STRING_SEPT_27_2017,
-        dueDate: Date.now(),
-        id: '12312445',
-        taggedMessage:
-            'Do it! Do it! Do it! Do it! Do it! Do it! Do it! Do it! .',
+        id: '456456',
+        taggedMessage: '@[456:Rihanna] You used to call me on my cell phone',
         createdBy: { name: 'Aubrey Graham', id: 1 },
-        assignees: [
-            {
-                id: 0,
-                user: { name: 'Kanye West', id: 10 },
-                status: 'incomplete'
-            },
-            {
-                id: 1,
-                user: { name: 'The man formerly known as Prince', id: 3 },
-                status: 'incomplete'
-            },
-            {
-                id: 2,
-                user: { name: 'Shawn Carter', id: 2 },
-                status: 'completed'
-            },
-        ],
-        type: 'task',
-        isPending: true
+        type: 'comment'
     },
     {
         createdAt: Date.now(),
-        id: '148954',
+        id: '789789',
+        taggedMessage: '@[789:Abel Tesfaye] It ain\'t me',
+        createdBy: { name: 'Selena Gomez', id: 3 },
+        type: 'comment'
+    },
+    {
+        createdAt: Date.now(),
+        id: '1489532',
         versionNumber: 1,
-        createdBy: {
-            name: 'The man formerly known as Prince',
-            id: 1
-        },
-        action: 'restore',
-        type: 'file_version'
-    },
-    {
-        createdAt: Date.now(),
-        id: '14895356',
-        versionNumber: 9,
-        createdBy: { name: 'Abel Tesfaye', id: 13 },
-        action: 'upload',
-        type: 'file_version'
-    },
-    {
-        createdAt: Date.now(),
-        id: '14895357',
-        versionNumber: 8,
-        createdBy: { name: 'Abel Tesfaye', id: 13 },
-        action: 'upload',
-        type: 'file_version'
-    },
-    {
-        createdAt: Date.now(),
-        id: '14895358',
-        versionNumber: 7,
-        createdBy: { name: 'Abel Tesfaye', id: 13 },
-        action: 'upload',
-        type: 'file_version'
-    },
-    {
-        createdAt: Date.now(),
-        id: '14895359',
-        versionNumber: 6,
-        createdBy: { name: 'Abel Tesfaye', id: 13 },
-        action: 'upload',
-        type: 'file_version'
-    },
-    {
-        createdAt: Date.now(),
-        id: '14895360',
-        versionNumber: 5,
-        createdBy: { name: 'Abel Tesfaye', id: 13 },
-        action: 'upload',
-        type: 'file_version'
-    },
-    {
-        createdAt: Date.now(),
-        id: '14895361',
-        versionNumber: 4,
-        createdBy: { name: 'Abel Tesfaye', id: 13 },
+        createdBy: { name: 'Beyonce', id: 4 },
         action: 'upload',
         type: 'file_version'
     }
